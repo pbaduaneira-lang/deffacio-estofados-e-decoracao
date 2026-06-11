@@ -143,9 +143,9 @@ function App() {
         {activeView === 'store' ? (
           <>
             <section className="hero">
-              <h2 className="animate-fade-in">Transforme sua casa com elegância</h2>
+              <h2 className="animate-fade-in">Tudo para o seu conforto: camas, sofás, decoração e serviços de reforma em um só lugar.</h2>
               <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                Camas, sofás e decorações para renovar seu espaço, além de serviços especializados de reforma e conserto para cuidar do que você já ama.
+                Transforme sua casa com quem entende de aconchego, do produto ao conserto.
               </p>
             </section>
 
