@@ -92,7 +92,37 @@ export const seedInitialData = () => {
   }
 };
 
-// --- AUTENTICAÇÃO ---
+// --- FINANCEIRO ---
+const TRANSACTIONS_KEY = '@estofados_transactions';
+
+export const getTransactions = () => {
+  try {
+    const data = localStorage.getItem(TRANSACTIONS_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch (error) {
+    return [];
+  }
+};
+
+export const saveTransactions = (transactions) => {
+  localStorage.setItem(TRANSACTIONS_KEY, JSON.stringify(transactions));
+};
+
+export const addTransaction = (transaction) => {
+  const transactions = getTransactions();
+  const newTransaction = {
+    ...transaction,
+    id: Date.now().toString()
+  };
+  saveTransactions([newTransaction, ...transactions]);
+  return newTransaction;
+};
+
+export const deleteTransaction = (id) => {
+  const transactions = getTransactions();
+  saveTransactions(transactions.filter(t => t.id !== id));
+};
+
 // --- AUTENTICAÇÃO ---
 
 export const loginAdmin = (email, password) => {
