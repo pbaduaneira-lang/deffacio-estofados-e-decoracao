@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { PlusCircle, ShoppingBag, User, LogOut, DollarSign, Store } from 'lucide-react';
 import { getProducts, seedInitialData, addProduct, updateProduct, deleteProduct } from './utils/storage';
 import ProductCard from './components/ProductCard';
