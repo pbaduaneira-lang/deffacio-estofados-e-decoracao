@@ -37,10 +37,53 @@
   padding: 6px 12px;
   border-radius: 20px;
   font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border: 1px solid var(--border-color);
   z-index: 2;
+}
+
+.admin-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.product-image-container:hover .admin-actions {
+  opacity: 1;
+}
+
+.admin-action-btn {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.admin-action-btn:hover {
+  transform: scale(1.1);
+}
+
+.admin-action-btn.edit:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.admin-action-btn.delete:hover {
+  background: #ef4444;
+  border-color: #ef4444;
 }
 
 .product-content {

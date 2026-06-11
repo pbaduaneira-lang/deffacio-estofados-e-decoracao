@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, ShoppingBag, User, LogOut } from 'lucide-react';
-import { getProducts, seedInitialData, addProduct } from './utils/storage';
+import { getProducts, seedInitialData, addProduct, updateProduct, deleteProduct } from './utils/storage';
 import ProductCard from './components/ProductCard';
 import WhatsAppButton from './components/WhatsAppButton';
 import AdminModal from './components/AdminModal';
@@ -14,6 +14,7 @@ function App() {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('Todos');
+  const [productToEdit, setProductToEdit] = useState(null);
 
   useEffect(() => {
     // Inicializa o banco com dados falsos caso esteja vazio
@@ -26,10 +27,28 @@ function App() {
     if (savedUser) setCurrentUser(JSON.parse(savedUser));
   }, []);
 
-  const handleAddProduct = (newProduct) => {
-    const savedProduct = addProduct(newProduct);
-    setProducts([savedProduct, ...products]);
+  const handleSaveProduct = (formData) => {
+    if (productToEdit) {
+      const updated = updateProduct(formData);
+      setProducts(products.map(p => p.id === updated.id ? updated : p));
+    } else {
+      const savedProduct = addProduct(formData);
+      setProducts([savedProduct, ...products]);
+    }
     setIsAdminOpen(false);
+    setProductToEdit(null);
+  };
+
+  const handleEditProduct = (product) => {
+    setProductToEdit(product);
+    setIsAdminOpen(true);
+  };
+
+  const handleDeleteProduct = (product) => {
+    if (window.confirm(`Tem certeza que deseja excluir "${product.title}"?`)) {
+      deleteProduct(product.id);
+      setProducts(products.filter(p => p.id !== product.id));
+    }
   };
 
   const handleContactClick = (product) => {
@@ -66,7 +85,10 @@ function App() {
               <>
                 <button 
                   className="btn btn-outline admin-btn"
-                  onClick={() => setIsAdminOpen(true)}
+                  onClick={() => {
+                    setProductToEdit(null);
+                    setIsAdminOpen(true);
+                  }}
                 >
                   <PlusCircle size={20} />
                   <span className="hide-mobile">Novo Produto</span>
@@ -127,6 +149,9 @@ function App() {
               <ProductCard 
                 product={product} 
                 onContactClick={handleContactClick} 
+                isAdmin={!!currentUser}
+                onEdit={handleEditProduct}
+                onDelete={handleDeleteProduct}
               />
             </div>
           ))}
@@ -148,8 +173,12 @@ function App() {
 
       <AdminModal 
         isOpen={isAdminOpen} 
-        onClose={() => setIsAdminOpen(false)}
-        onSave={handleAddProduct}
+        onClose={() => {
+          setIsAdminOpen(false);
+          setProductToEdit(null);
+        }}
+        onSave={handleSaveProduct}
+        initialData={productToEdit}
       />
     </div>
   );

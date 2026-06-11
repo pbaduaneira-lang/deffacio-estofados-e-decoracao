@@ -40,6 +40,19 @@ export const addProduct = (product) => {
   return newProduct;
 };
 
+export const updateProduct = (updatedProduct) => {
+  const products = getProducts();
+  const updatedList = products.map(p => p.id === updatedProduct.id ? updatedProduct : p);
+  saveProducts(updatedList);
+  return updatedProduct;
+};
+
+export const deleteProduct = (id) => {
+  const products = getProducts();
+  const filteredList = products.filter(p => p.id !== id);
+  saveProducts(filteredList);
+};
+
 /**
  * Preenche o banco com produtos fictícios iniciais se estiver vazio.
  */

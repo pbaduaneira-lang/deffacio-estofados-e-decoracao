@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Save, Upload, Link as LinkIcon, Image as ImageIcon } from 'lucide-react';
 import { resizeAndConvertImage } from '../utils/imageUtils';
 import './AdminModal.css';
 
-const AdminModal = ({ isOpen, onClose, onSave }) => {
+const AdminModal = ({ isOpen, onClose, onSave, initialData = null }) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -16,6 +16,18 @@ const AdminModal = ({ isOpen, onClose, onSave }) => {
   const [imageMode, setImageMode] = useState('url'); // 'url' or 'upload'
   const [isProcessingImage, setIsProcessingImage] = useState(false);
   const [uploadError, setUploadError] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      if (initialData) {
+        setFormData(initialData);
+        setImageMode('url'); // Default para link ao editar
+      } else {
+        setFormData({ title: '', description: '', price: '', category: 'Sofás', subcategory: '', imageUrl: '' });
+      }
+      setUploadError('');
+    }
+  }, [isOpen, initialData]);
 
   if (!isOpen) return null;
 
@@ -55,7 +67,7 @@ const AdminModal = ({ isOpen, onClose, onSave }) => {
     <div className="modal-overlay animate-fade-in">
       <div className="glass-card modal-content">
         <div className="modal-header">
-          <h2>Adicionar Novo Produto</h2>
+          <h2>{initialData ? 'Editar Produto' : 'Adicionar Novo Produto'}</h2>
           <button className="icon-btn" onClick={onClose} aria-label="Fechar">
             <X size={24} color="var(--text-main)" />
           </button>

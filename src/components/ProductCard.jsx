@@ -1,7 +1,8 @@
 import React from 'react';
+import { Edit2, Trash2 } from 'lucide-react';
 import './ProductCard.css';
 
-const ProductCard = ({ product, onContactClick }) => {
+const ProductCard = ({ product, onContactClick, isAdmin, onEdit, onDelete }) => {
   // Formatar o preço para BRL
   const formattedPrice = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -18,6 +19,17 @@ const ProductCard = ({ product, onContactClick }) => {
           loading="lazy"
         />
         <div className="product-price-badge">{formattedPrice}</div>
+        
+        {isAdmin && (
+          <div className="admin-actions">
+            <button className="admin-action-btn edit" onClick={() => onEdit(product)} title="Editar Produto">
+              <Edit2 size={16} />
+            </button>
+            <button className="admin-action-btn delete" onClick={() => onDelete(product)} title="Excluir Produto">
+              <Trash2 size={16} />
+            </button>
+          </div>
+        )}
       </div>
       <div className="product-content">
         {product.category && (
