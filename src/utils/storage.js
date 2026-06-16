@@ -127,7 +127,7 @@ export const deleteTransaction = (id) => {
 
 export const loginAdmin = (email, password) => {
   const adminEmail = 'deffacio@gmail.com';
-  const adminPass = 'rafa123';
+  const adminPass = 'Rafael1234';
 
   if (email === adminEmail && password === adminPass) {
     return { id: 'admin-1', email };
