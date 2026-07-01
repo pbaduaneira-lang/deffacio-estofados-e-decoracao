@@ -56,7 +56,7 @@ function App() {
   const handleContactClick = (product) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: *${product.title}* (R$ ${product.price}). Poderia me ajudar?`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/5544998324148?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/5544998327350?text=${encodedMessage}`, '_blank');
   };
 
   const filteredProducts = selectedCategory === 'Todos' 
@@ -163,7 +163,7 @@ function App() {
                 className="cat-tab"
                 onClick={() => {
                   const msg = encodeURIComponent("Olá! Gostaria de fazer um orçamento para serviços de reforma e conserto.");
-                  window.open(`https://wa.me/5544998324148?text=${msg}`, '_blank');
+                  window.open(`https://wa.me/5544998327350?text=${msg}`, '_blank');
                 }}
               >
                 Serviços
