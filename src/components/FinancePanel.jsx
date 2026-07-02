@@ -13,7 +13,11 @@ const FinancePanel = () => {
   });
 
   useEffect(() => {
-    setTransactions(getTransactions());
+    const fetchTransactions = async () => {
+      const data = await getTransactions();
+      setTransactions(data);
+    };
+    fetchTransactions();
   }, []);
 
   const handleChange = (e) => {
@@ -21,18 +25,18 @@ const FinancePanel = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.description || !formData.amount) return;
     
-    const saved = addTransaction(formData);
+    const saved = await addTransaction(formData);
     setTransactions([saved, ...transactions]);
     setFormData(prev => ({ ...prev, description: '', amount: '' }));
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm('Excluir este lançamento?')) {
-      deleteTransaction(id);
+      await deleteTransaction(id);
       setTransactions(transactions.filter(t => t.id !== id));
     }
   };

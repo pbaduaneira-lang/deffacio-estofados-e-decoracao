@@ -19,22 +19,24 @@ function App() {
   const [activeView, setActiveView] = useState('store'); // 'store' ou 'finance'
 
   useEffect(() => {
-    // Inicializa o banco com dados falsos caso esteja vazio
-    seedInitialData();
-    // Carrega os produtos do localStorage
-    setProducts(getProducts());
+    const initData = async () => {
+      await seedInitialData();
+      const loadedProducts = await getProducts();
+      setProducts(loadedProducts);
+    };
+    initData();
     
     // Verifica se há usuário logado na sessão atual
     const savedUser = sessionStorage.getItem('@estofados_session');
     if (savedUser) setCurrentUser(JSON.parse(savedUser));
   }, []);
 
-  const handleSaveProduct = (formData) => {
+  const handleSaveProduct = async (formData) => {
     if (productToEdit) {
-      const updated = updateProduct(formData);
+      const updated = await updateProduct(formData);
       setProducts(products.map(p => p.id === updated.id ? updated : p));
     } else {
-      const savedProduct = addProduct(formData);
+      const savedProduct = await addProduct(formData);
       setProducts([savedProduct, ...products]);
     }
     setIsAdminOpen(false);
@@ -46,9 +48,9 @@ function App() {
     setIsAdminOpen(true);
   };
 
-  const handleDeleteProduct = (product) => {
+  const handleDeleteProduct = async (product) => {
     if (window.confirm(`Tem certeza que deseja excluir "${product.title}"?`)) {
-      deleteProduct(product.id);
+      await deleteProduct(product.id);
       setProducts(products.filter(p => p.id !== product.id));
     }
   };
