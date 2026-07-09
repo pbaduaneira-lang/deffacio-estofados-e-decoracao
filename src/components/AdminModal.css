@@ -129,16 +129,20 @@ textarea.input-field {
   align-items: center;
   gap: 8px;
   padding: 24px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 2px dashed var(--accent);
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 2px dashed var(--primary);
   border-radius: var(--radius-sm);
   cursor: pointer;
   text-align: center;
   transition: all 0.2s;
 }
 
+[data-theme='dark'] .file-upload-label {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .file-upload-label:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(140, 108, 62, 0.08);
   border-style: solid;
 }
 
@@ -164,12 +168,12 @@ textarea.input-field {
   object-fit: contain;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .processing-text {
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--primary);
   margin-top: 8px;
   text-align: center;
 }

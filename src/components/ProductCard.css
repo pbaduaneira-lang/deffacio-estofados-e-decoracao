@@ -104,13 +104,13 @@
 }
 
 .category-tag {
-  background-color: rgba(37, 211, 102, 0.1);
+  background-color: rgba(140, 108, 62, 0.12);
   color: var(--primary);
 }
 
 .subcategory-tag {
-  background-color: rgba(200, 169, 126, 0.1);
-  color: #C8A97E;
+  background-color: rgba(100, 116, 139, 0.12);
+  color: #475569;
 }
 
 .product-title {

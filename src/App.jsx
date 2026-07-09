@@ -145,7 +145,7 @@ function App() {
         {activeView === 'store' ? (
           <>
             <section className="hero">
-              <h2 className="animate-fade-in">Tudo para o seu conforto: camas, sofás, decoração e serviços de reforma em um só lugar.</h2>
+              <h2 className="animate-fade-in">Tudo para o seu conforto: camas, sofás, decoração e reformas em um só lugar.</h2>
               <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 Transforme sua casa com quem entende de aconchego, do produto ao conserto.
               </p>
@@ -164,11 +164,11 @@ function App() {
               <button 
                 className="cat-tab"
                 onClick={() => {
-                  const msg = encodeURIComponent("Olá! Gostaria de fazer um orçamento para serviços de reforma e conserto.");
+                  const msg = encodeURIComponent("Olá! Gostaria de fazer um orçamento para reformas e consertos.");
                   window.open(`https://wa.me/5544998324148?text=${msg}`, '_blank');
                 }}
               >
-                Serviços
+                Reformas
               </button>
             </section>
 

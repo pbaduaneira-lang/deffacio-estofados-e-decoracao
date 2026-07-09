@@ -50,51 +50,65 @@
 
 .hero {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 249, 246, 0.95) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 30px rgba(140, 108, 62, 0.08);
 }
 
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 16px;
   color: var(--text-main);
+  letter-spacing: -0.5px;
+  line-height: 1.25;
 }
 
 .hero p {
   font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .category-tabs {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   flex-wrap: wrap;
 }
 
 .cat-tab {
-  padding: 8px 20px;
-  border-radius: 20px;
+  padding: 10px 22px;
+  border-radius: 30px;
   border: 1px solid var(--border-color);
   background: var(--bg-card);
   color: var(--text-muted);
   font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .cat-tab:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(140, 108, 62, 0.08);
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
 .cat-tab.active {
   background: var(--primary);
   color: white;
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 14px rgba(140, 108, 62, 0.3);
+  transform: translateY(-2px);
 }
 
 .products-grid {
@@ -109,7 +123,9 @@
   padding: 60px 20px;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
   color: var(--text-muted);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 @media (max-width: 600px) {
