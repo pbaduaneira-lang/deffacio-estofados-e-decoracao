@@ -147,7 +147,7 @@ function App() {
             <section className="hero">
               <h2 className="animate-fade-in">Tudo para o seu conforto: Sofás, Camas Box, Cama Box Baú, Cabeceiras e Colchões!</h2>
               <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                Transforme sua casa com quem entende de aconchego, do produto ao conserto.
+                Sofás, Camas e Colchões - feitos para o seu conforto.
               </p>
             </section>
 
