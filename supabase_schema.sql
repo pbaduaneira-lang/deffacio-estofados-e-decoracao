@@ -70,6 +70,8 @@ CREATE POLICY "Permitir exclusão pública de transações" ON public.transactio
 INSERT INTO public.products (id, title, description, price, category, subcategory, "imageUrl")
 VALUES
   ('1', 'Sofá Retrátil Istambul', 'Sofá retrátil e reclinável com 2.50m de largura. Tecido em veludo premium, espuma D33 e molas ensacadas.', '2490.00', 'Sofás', 'Retrátil', 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80'),
-  ('2', 'Poltrona Decorativa Costela', 'Poltrona de design moderno com pés em madeira maciça e estofado capitonê em linho cru.', '1150.00', 'Decoração', 'Poltrona', 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80'),
-  ('3', 'Colchão Molas Ensacadas', 'Colchão de molas ensacadas com pillow top, garantindo máximo conforto e durabilidade.', '1890.00', 'Cama', 'Colchão', 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80')
+  ('2', 'Cama Box Casal Conjugada Herval', 'Cama Box Casal com colchão de molas ensacadas acoplado e estrutura resistente em madeira eucalipto.', '1650.00', 'Cama Box', 'Casal', 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80'),
+  ('3', 'Cama Box Baú Queen Size Probel', 'Cama Box Baú com pistões hidráulicos de fácil abertura, amplo espaço interno para armazenamento e acabamento em courino.', '1980.00', 'Cama Box Baú', 'Queen Size', 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80'),
+  ('4', 'Cabeceira Estofada Painel King Luxo', 'Cabeceira capitonê em linho bege de alto padrão para cama King Size, com espessura anatômica e fixação prática.', '890.00', 'Cabeceiras', 'King Size', 'https://images.unsplash.com/photo-1540518614846-7ede433c4efb?auto=format&fit=crop&w=800&q=80'),
+  ('5', 'Colchão Molas Ensacadas Pillow Top', 'Colchão de molas ensacadas individualmente com pillow top de espuma viscoelástica, garantindo máximo conforto e durabilidade.', '1890.00', 'Colchões', 'Pillow Top', 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80')
 ON CONFLICT (id) DO NOTHING;

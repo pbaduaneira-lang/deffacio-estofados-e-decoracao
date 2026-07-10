@@ -147,21 +147,39 @@ export const seedInitialData = async () => {
       },
       {
         id: '2',
-        title: 'Poltrona Decorativa Costela',
-        description: 'Poltrona de design moderno com pés em madeira maciça e estofado capitonê em linho cru.',
-        price: '1150.00',
-        category: 'Decoração',
-        subcategory: 'Poltrona',
-        imageUrl: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80'
+        title: 'Cama Box Casal Conjugada Herval',
+        description: 'Cama Box Casal com colchão de molas ensacadas acoplado e estrutura resistente em madeira eucalipto.',
+        price: '1650.00',
+        category: 'Cama Box',
+        subcategory: 'Casal',
+        imageUrl: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: '3',
-        title: 'Colchão Molas Ensacadas',
-        description: 'Colchão de molas ensacadas com pillow top, garantindo máximo conforto e durabilidade.',
+        title: 'Cama Box Baú Queen Size Probel',
+        description: 'Cama Box Baú com pistões hidráulicos de fácil abertura, amplo espaço interno para armazenamento e acabamento em courino.',
+        price: '1980.00',
+        category: 'Cama Box Baú',
+        subcategory: 'Queen Size',
+        imageUrl: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: '4',
+        title: 'Cabeceira Estofada Painel King Luxo',
+        description: 'Cabeceira capitonê em linho bege de alto padrão para cama King Size, com espessura anatômica e fixação prática.',
+        price: '890.00',
+        category: 'Cabeceiras',
+        subcategory: 'King Size',
+        imageUrl: 'https://images.unsplash.com/photo-1540518614846-7ede433c4efb?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: '5',
+        title: 'Colchão Molas Ensacadas Pillow Top',
+        description: 'Colchão de molas ensacadas individualmente com pillow top de espuma viscoelástica, garantindo máximo conforto e durabilidade.',
         price: '1890.00',
-        category: 'Cama',
-        subcategory: 'Colchão',
-        imageUrl: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80'
+        category: 'Colchões',
+        subcategory: 'Pillow Top',
+        imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80'
       }
     ];
 

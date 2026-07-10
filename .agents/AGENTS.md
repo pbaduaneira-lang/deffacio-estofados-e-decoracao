@@ -57,8 +57,7 @@ e:\Rafael\
 ```
 
 ## 5. Abas de Categorias e Ações de Contato (`src/App.jsx`)
-- As categorias de filtragem da vitrine são: `Todos`, `Sofás`, `Cama`, e `Decoração`.
-- A aba final da lista chama-se **`Reformas`**. Ao ser clicada, ela não filtra produtos, mas abre diretamente o WhatsApp do atendimento com uma mensagem pré-codificada: `"Olá! Gostaria de fazer um orçamento para reformas e consertos."`.
+- As categorias de filtragem da vitrine são: `Todos`, `Sofás`, `Cama Box`, `Cama Box Baú`, `Cabeceiras` e `Colchões`.
 - O botão **"Tenho Interesse"** dentro de cada card de produto (`ProductCard.jsx`) aciona a função `handleContactClick`, gerando uma mensagem automática no WhatsApp contendo o título e o preço do respectivo produto.
 
 ## 6. Lógica de Autenticação e Segurança Administrativa

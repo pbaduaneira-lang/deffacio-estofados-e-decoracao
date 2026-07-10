@@ -28,8 +28,7 @@ O projeto não utiliza backend externo, todos os dados são salvos no navegador 
 ## 🛠 Funcionalidades Implementadas
 ### Vitrine Pública (Cliente)
 - Exibição de produtos em formato de "Cards" com imagens e preços formatados.
-- Filtros por categorias (Todos, Sofás, Cama, Decoração).
-- Aba especial de "Reformas" que abre diretamente o WhatsApp para orçamentos de reformas e consertos.
+- Filtros por categorias (Todos, Sofás, Cama Box, Cama Box Baú, Cabeceiras, Colchões).
 - Botão do WhatsApp flutuante e botão "Comprar/Orçar" em cada produto.
 
 ### Painel Administrativo (Admin)
@@ -56,7 +55,7 @@ O visual da aplicação foi completamente repaginado em julho/2026 para transmit
 ## 📝 Resumo de Estrutura de Pastas e Componentes
 - `/src/components`: Componentes reutilizáveis como `ProductCard`, `AuthModal`, `AdminModal`, `FinancePanel`, `Logo` e `WhatsAppButton`.
 - `/src/utils`: Funções utilitárias como `storage.js` (comunicação com banco local / Supabase opcional) e `imageUtils.js` (redimensionamento e compressão de imagens antes do salvamento).
-- `App.jsx`: Componente principal que gerencia o estado da aplicação, as abas de categoria (*Todos, Sofás, Cama, Decoração, Reformas*) e a navegação entre a Loja e os painéis de Admin.
+- `App.jsx`: Componente principal que gerencia o estado da aplicação, as abas de categoria (*Todos, Sofás, Cama Box, Cama Box Baú, Cabeceiras, Colchões*) e a navegação entre a Loja e os painéis de Admin.
 
 ---
 *Documentação mantida e atualizada continuamente por Antigravity (Gravi) para garantir que qualquer desenvolvedor ou agente de IA conheça 100% da arquitetura, do design system e da integração contínua (Vercel + GitHub) do projeto.*

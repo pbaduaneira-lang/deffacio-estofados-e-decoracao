@@ -114,8 +114,10 @@ const AdminModal = ({ isOpen, onClose, onSave, initialData = null }) => {
               required
             >
               <option value="Sofás">Sofás</option>
-              <option value="Cama">Cama</option>
-              <option value="Decoração">Decoração</option>
+              <option value="Cama Box">Cama Box</option>
+              <option value="Cama Box Baú">Cama Box Baú</option>
+              <option value="Cabeceiras">Cabeceiras</option>
+              <option value="Colchões">Colchões</option>
             </select>
           </div>
 

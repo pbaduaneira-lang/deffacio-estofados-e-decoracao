@@ -145,14 +145,14 @@ function App() {
         {activeView === 'store' ? (
           <>
             <section className="hero">
-              <h2 className="animate-fade-in">Tudo para o seu conforto: camas, sofás, decoração e reformas em um só lugar.</h2>
+              <h2 className="animate-fade-in">Tudo para o seu conforto: Sofás, Camas Box, Cama Box Baú, Cabeceiras e Colchões!</h2>
               <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 Transforme sua casa com quem entende de aconchego, do produto ao conserto.
               </p>
             </section>
 
             <section className="category-tabs">
-              {['Todos', 'Sofás', 'Cama', 'Decoração'].map(cat => (
+              {['Todos', 'Sofás', 'Cama Box', 'Cama Box Baú', 'Cabeceiras', 'Colchões'].map(cat => (
                 <button 
                   key={cat}
                   className={`cat-tab ${selectedCategory === cat ? 'active' : ''}`}
@@ -161,15 +161,6 @@ function App() {
                   {cat}
                 </button>
               ))}
-              <button 
-                className="cat-tab"
-                onClick={() => {
-                  const msg = encodeURIComponent("Olá! Gostaria de fazer um orçamento para reformas e consertos.");
-                  window.open(`https://wa.me/5544998324148?text=${msg}`, '_blank');
-                }}
-              >
-                Reformas
-              </button>
             </section>
 
             <section className="products-grid">
