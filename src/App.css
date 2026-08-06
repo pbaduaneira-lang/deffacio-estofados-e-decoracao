@@ -52,7 +52,7 @@
   text-align: center;
   margin-bottom: 50px;
   padding: 48px 24px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 249, 246, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(140, 108, 62, 0.09) 0%, rgba(140, 108, 62, 0.16) 100%);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: 0 8px 30px rgba(140, 108, 62, 0.08);

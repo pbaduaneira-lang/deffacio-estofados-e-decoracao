@@ -6,6 +6,12 @@ const WhatsAppButton = ({ phoneNumber = "5544998324148", message = "Olá! Gostar
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
+  const handleClick = () => {
+    if (typeof window.gtag_report_conversion === 'function') {
+      return window.gtag_report_conversion(whatsappUrl);
+    }
+  };
+
   return (
     <a
       href={whatsappUrl}
@@ -13,6 +19,7 @@ const WhatsAppButton = ({ phoneNumber = "5544998324148", message = "Olá! Gostar
       rel="noopener noreferrer"
       className="whatsapp-float-btn animate-fade-in"
       aria-label="Falar no WhatsApp"
+      onClick={handleClick}
     >
       <MessageCircle size={32} color="#ffffff" />
     </a>
